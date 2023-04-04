@@ -44,7 +44,7 @@ class BAIN:
 
         # 描画
 #         ani = ArtistAnimation(fig, frames, interval=110-self.speed*10)
-        ani = FuncAnimation(fig, oppy_update, frames=range(100), interval=110-self.speed*10)
+        ani = FuncAnimation(fig, self.oppy_update, frames=range(100), interval=110-self.speed*10)
         components.html(ani.to_jshtml(),height=800)
         
 #         display.HTML(ani.to_jshtml())
