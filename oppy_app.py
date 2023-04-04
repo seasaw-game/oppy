@@ -37,7 +37,7 @@ class BAIN:
 
 #         display.HTML(ani.to_jshtml())
 #         display.display(html)
-#         plt.close()
+        plt.close()
 
 # Streamlit app
 def app():
