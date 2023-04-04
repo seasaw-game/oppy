@@ -48,7 +48,7 @@ def app():
     bain.animate()
 
     # Display the matplotlib figure using st.pyplot
-    st.pyplot(fig)
+    st.pyplot()
     
 # Run the app
 if __name__ == '__main__':
