@@ -1,3 +1,4 @@
+%matplotlib widget
 import streamlit as st
 import streamlit.components.v1 as components
 import numpy as np
@@ -32,12 +33,11 @@ class BAIN:
 
         # 描画
         ani = ArtistAnimation(fig, frames, interval=110-self.speed*10)
-#         components.html(ani.to_jshtml(),height=800)
+        components.html(ani.to_jshtml(),height=800)
         
 #         display.HTML(ani.to_jshtml())
 #         display.display(html)
 #         plt.close()
-        return ani
 
 # Streamlit app
 def app():
@@ -49,11 +49,10 @@ def app():
     bain = BAIN(speed)
 
     # Display the animation
-    ani = bain.animate()
+    bain.animate()
 
     # Display the matplotlib figure using st.pyplot
 #     st.pyplot()
-    components.html(ani.to_jshtml(),height=800)
     
 # Run the app
 if __name__ == '__main__':
