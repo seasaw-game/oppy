@@ -26,7 +26,7 @@ def app():
     fig = plt.figure(figsize=(3,8))
     y = np.linspace(-3, 3, 100)
     frames = []
-    num_frames = 100
+    num_frames = 1000
     for i in range(num_frames):
         frame = plt.plot(x_set(i*0.1, y), y, color="black")
         frames.append(frame)
