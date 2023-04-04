@@ -19,6 +19,7 @@ class BAIN:
         x3 = 0.2*(np.exp(-1*(y+1)**2)+1)/(1+np.exp(100*(y+1)+16*np.sin(t)))
         x4 = 0.1/np.exp(2*(10*y+1.2*(2+np.sin(t))*np.sin(t))**4)
         x = x1 + x2 + x3 + x4
+        self.ax.cla()
         self.ax.plot(x,y, color="black")
 
     def animate(self):
@@ -33,7 +34,7 @@ class BAIN:
 
         # 描画
 #         ani = ArtistAnimation(fig, frames, interval=110-self.speed*10)
-        ani = FuncAnimation(fig, self.oppy_update, frames=range(100), interval=110-self.speed*10)
+        ani = FuncAnimation(fig, self.oppy_update, frames=range(1000), interval=110-self.speed*10)
         components.html(ani.to_jshtml(),height=800)
 
 #         display.HTML(ani.to_jshtml())
@@ -53,7 +54,7 @@ def app():
     bain.animate()
 
     # Display the matplotlib figure using st.pyplot
-    st.pyplot()
+#     st.pyplot()
 
 # Run the app
 if __name__ == '__main__':
