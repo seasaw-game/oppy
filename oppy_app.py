@@ -31,7 +31,7 @@ class BAIN:
         x4 = 0.1/np.exp(2*(10*y+1.2*(2+np.sin(t))*np.sin(t))**4)
 
         x = x1 + x2 + x3 + x4
-        ax.plot(x,y, color="black")
+        self.ax.plot(x,y, color="black")
 
     def animate(self):
         fig = plt.figure(figsize=(3,8))
