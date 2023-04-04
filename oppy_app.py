@@ -3,10 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import ArtistAnimation
 from IPython import display
-import warnings
+# import warnings
 
-#suppress warnings
-warnings.filterwarnings('ignore')
+# #suppress warnings
+# warnings.filterwarnings('ignore')
 
 class BAIN:
     def __init__(self, speed):
