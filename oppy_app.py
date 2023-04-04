@@ -48,8 +48,8 @@ def app():
     bain.animate()
 
     # Display the matplotlib figure using st.pyplot
-    st.pyplot()
-
+    st.pyplot(fig)
+    
 # Run the app
 if __name__ == '__main__':
     app()
