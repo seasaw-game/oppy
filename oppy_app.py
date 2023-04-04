@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import ArtistAnimation
@@ -31,7 +32,7 @@ class BAIN:
 
         # 描画
         ani = ArtistAnimation(fig, frames, interval=110-self.speed*10)
-        st.components.html(ani.to_jshtml())
+        components.html(ani.to_jshtml())
 #         display.HTML(ani.to_jshtml())
 #         display.display(html)
 #         plt.close()
