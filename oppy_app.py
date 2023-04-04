@@ -31,9 +31,10 @@ class BAIN:
 
         # 描画
         ani = ArtistAnimation(fig, frames, interval=110-self.speed*10)
-        html = display.HTML(ani.to_jshtml())
-        display.display(html)
-        plt.close()
+        components.html(ani.to_jshtml())
+#         display.HTML(ani.to_jshtml())
+#         display.display(html)
+#         plt.close()
 
 # Streamlit app
 def app():
