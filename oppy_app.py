@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 # from matplotlib.animation import ArtistAnimation
 from matplotlib.animation import FuncAnimation
-from IPython import display 
+from IPython import display
 
 
 class BAIN:
@@ -22,7 +22,7 @@ class BAIN:
         x = x1 + x2 + x3 + x4
         x = x.astype(np.float64)
         return x
-    
+
     def oppy_update(self, t):
         y = np.linspace(-3, 3, 100)
         x1 = 1.5*np.exp((0.12*np.sin(t)-0.5)*(y+0.16*np.sin(t))**2)/(1+np.exp(-20*(5*y+np.sin(t))))
@@ -35,18 +35,19 @@ class BAIN:
 
     def animate(self):
         fig = plt.figure(figsize=(3,8))
-        y = np.linspace(-3, 3, 100)
-        frames = []
-        num_frames = 100
-        for i in range(num_frames):
-            frame = plt.plot(self.x_set(i*0.1, y), y, color="black")
-            frames.append(frame)
+        self.ax = fig.add_subplot(111)
+        # y = np.linspace(-3, 3, 100)
+        # frames = []
+        # num_frames = 100
+        # for i in range(num_frames):
+        #     frame = plt.plot(self.x_set(i*0.1, y), y, color="black")
+        #     frames.append(frame)
 
         # 描画
 #         ani = ArtistAnimation(fig, frames, interval=110-self.speed*10)
         ani = FuncAnimation(fig, self.oppy_update, frames=range(100), interval=110-self.speed*10)
         components.html(ani.to_jshtml(),height=800)
-        
+
 #         display.HTML(ani.to_jshtml())
 #         display.display(html)
 #         plt.close()
@@ -65,7 +66,7 @@ def app():
 
     # Display the matplotlib figure using st.pyplot
 #     st.pyplot()
-    
+
 # Run the app
 if __name__ == '__main__':
     app()
