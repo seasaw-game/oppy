@@ -31,7 +31,7 @@ class BAIN:
 
         # 描画
         ani = ArtistAnimation(fig, frames, interval=110-self.speed*10)
-        components.html(ani.to_jshtml())
+        st.components.html(ani.to_jshtml())
 #         display.HTML(ani.to_jshtml())
 #         display.display(html)
 #         plt.close()
