@@ -33,7 +33,7 @@ def app():
 
     # 描画
     ani = ArtistAnimation(fig, frames, interval=110-speed*10)
-    components.html(ani.to_jshtml())
+    components.html(ani.to_jshtml(), height=2000)
 
 # Run the app
 if __name__ == '__main__':
