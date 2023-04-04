@@ -2,11 +2,8 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import ArtistAnimation
-from IPython import display
-# import warnings
+from IPython import display 
 
-# #suppress warnings
-# warnings.filterwarnings('ignore')
 
 class BAIN:
     def __init__(self, speed):
@@ -36,6 +33,7 @@ class BAIN:
         ani = ArtistAnimation(fig, frames, interval=110-self.speed*10)
         html = display.HTML(ani.to_jshtml())
         display.display(html)
+        plt.close()
 
 # Streamlit app
 def app():
@@ -48,6 +46,9 @@ def app():
 
     # Display the animation
     bain.animate()
+
+    # Display the matplotlib figure using st.pyplot
+    st.pyplot()
 
 # Run the app
 if __name__ == '__main__':
