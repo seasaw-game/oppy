@@ -35,9 +35,9 @@ def app_ver1():
     fig = plt.figure(figsize=(3,8))
     y = np.linspace(-3, 3, resolution)
     frames = []
-    num_frames = np.pi()
+    num_frames = 20
     for i in range(num_frames):
-        frame = plt.plot(x_set(i*0.1, y, R18_flag), y, color="black")
+        frame = plt.plot(x_set(np.pi()/num_frames*i, y, R18_flag), y, color="black")
         frames.append(frame)
 
     # 描画
