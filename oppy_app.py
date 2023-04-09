@@ -29,7 +29,7 @@ def app_ver1():
     R18_flag = st.checkbox("私は18歳以上です。")
 
     fig = plt.figure(figsize=(3,8))
-    y = np.linspace(-3, 3, 100)
+    y = np.linspace(-3, 3, 10)
     frames = []
     num_frames = 100
     for i in range(num_frames):
@@ -65,4 +65,4 @@ def app_ver2():
 
 # Run the app
 if __name__ == '__main__':
-    app_ver2()
+    app_ver1()
