@@ -61,7 +61,7 @@ def app_ver2():
 
     # 描画　高速化
     anim = FuncAnimation(fig, update(y, py_line, R18_flag))
-    plt.show()
+    components.html(anim.to_jshtml(), height=2000)
 
 # Run the app
 if __name__ == '__main__':
