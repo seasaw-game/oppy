@@ -24,11 +24,11 @@ def x_set(t, y, R18_flag):
 # Streamlit app
 def app_ver1():
     st.title('BAIN')
-    speed = st.slider('BAIN SPEED', 0, 10, 5, 1)
-    resolution = st.slider('解像度', 10, 200, 100, 10)
-    # num_frames =
-    st.text("あなたは18歳以上ですか？")
-    R18_flag = st.checkbox("私は18歳以上です。")
+    with st.sidebar:
+        speed = st.slider('BAIN SPEED', 0, 10, 5, 1)
+        resolution = st.slider('解像度', 10, 200, 100, 10)
+        st.text("あなたは18歳以上ですか？")
+        R18_flag = st.checkbox("私は18歳以上です。")
 
 
 
