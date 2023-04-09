@@ -25,13 +25,17 @@ def x_set(t, y, R18_flag):
 def app_ver1():
     st.title('BAIN')
     speed = st.slider('BAIN SPEED', 0, 10, 5, 1)
+    resolution = st.slider('解像度', 10, 200, 100, 10)
+    num_frames =
     st.text("あなたは18歳以上ですか？")
     R18_flag = st.checkbox("私は18歳以上です。")
 
+
+
     fig = plt.figure(figsize=(3,8))
-    y = np.linspace(-3, 3, 10)
+    y = np.linspace(-3, 3, resolution)
     frames = []
-    num_frames = 100
+    num_frames = np.pi()
     for i in range(num_frames):
         frame = plt.plot(x_set(i*0.1, y, R18_flag), y, color="black")
         frames.append(frame)
@@ -40,28 +44,6 @@ def app_ver1():
     ani = ArtistAnimation(fig, frames, interval=110-speed*10)
     components.html(ani.to_jshtml(), height=2000)
 
-def update(i,y,py_line,R18_flag):
-
-    x = x_set(i, y, R18_flag)
-    py_line.set_data(x,y)
-
-def app_ver2():
-    st.title('BAIN')
-    speed = st.slider('BAIN SPEED', 0, 10, 5, 1)
-    st.text("あなたは18歳以上ですか？")
-    R18_flag = st.checkbox("私は18歳以上です。")
-
-    fig,ax = plt.figure(figsize=(3,8))
-    py_line, = ax.plot([],[])
-
-    ax.set_xlim(0, 1.7)
-    ax.set_ylim(-3, 3)
-
-    y = np.linspace(-3, 3, 100)
-
-    # 描画　高速化
-    anim = FuncAnimation(fig, update(y, py_line, R18_flag))
-    components.html(anim.to_jshtml(), height=2000)
 
 # Run the app
 if __name__ == '__main__':
