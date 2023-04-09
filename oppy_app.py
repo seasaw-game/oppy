@@ -26,7 +26,7 @@ def app_ver1():
     st.title('BAIN')
     speed = st.slider('BAIN SPEED', 0, 10, 5, 1)
     resolution = st.slider('解像度', 10, 200, 100, 10)
-    num_frames =
+    # num_frames =
     st.text("あなたは18歳以上ですか？")
     R18_flag = st.checkbox("私は18歳以上です。")
 
