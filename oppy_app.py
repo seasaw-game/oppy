@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import ArtistAnimation
-# from matplotlib.animation import FuncAnimation
+from matplotlib.animation import FuncAnimation
 from IPython import display
 
 def x_set(t, y, R18_flag):
@@ -22,7 +22,7 @@ def x_set(t, y, R18_flag):
     return x
 
 # Streamlit app
-def app():
+def app_ver1():
     st.title('BAIN')
     speed = st.slider('BAIN SPEED', 0, 10, 5, 1)
     st.text("あなたは18歳以上ですか？")
@@ -40,9 +40,29 @@ def app():
     ani = ArtistAnimation(fig, frames, interval=110-speed*10)
     components.html(ani.to_jshtml(), height=2000)
 
-    # 描画　高速化
+def update(i,y,py_line,R18_flag):
 
+    x = x_set(i, y, R18_flag)
+    py_line.set_data(x,y)
+
+def app_ver2():
+    st.title('BAIN')
+    speed = st.slider('BAIN SPEED', 0, 10, 5, 1)
+    st.text("あなたは18歳以上ですか？")
+    R18_flag = st.checkbox("私は18歳以上です。")
+
+    fig,ax = plt.figure(figsize=(3,8))
+    py_line, = ax.plot([],[])
+
+    ax.set_xlim(0, 1.7)
+    ax.set_ylim(-3, 3)
+
+    y = np.linspace(-3, 3, 100)
+
+    # 描画　高速化
+    anim = FuncAnimation(fig, update(y, py_line, R18_flag))
+    plt.show()
 
 # Run the app
 if __name__ == '__main__':
-    app()
+    app_ver2()
