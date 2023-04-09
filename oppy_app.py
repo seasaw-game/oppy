@@ -25,6 +25,7 @@ def x_set(t, y, R18_flag):
 def app():
     st.title('BAIN')
     speed = st.slider('BAIN SPEED', 0, 10, 5, 1)
+    st.text("あなたは18歳以上ですか？")
     R18_flag = st.checkbox("私は18歳以上です。")
 
     fig = plt.figure(figsize=(3,8))
